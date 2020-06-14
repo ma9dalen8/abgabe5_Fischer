@@ -12,10 +12,10 @@
 <h2>Getting Started</h2>
 <p> I used npm express and Mongodb for that project. After initiating the server, set the main page to "mainIndex.html" and the start scripts to "node start.js"
     <br/><strong>Packages</strong><br/>
-    npm install --express<br/>
-    npm install --mongodb<br/>
-    npm install --body-parser<br/>
-    npm install --jquery<br/><br/>
+    npm install express<br/>
+    npm install mongodb<br/>
+    npm install body-parser<br/>
+    npm install jquery<br/><br/>
     For the mapping and the geocoding I used Mapbox.<br/>
     --> Please fill your accessTokens into the scripts. Twice in "usermap.js", once in "map.js"
     </p>
