@@ -10,7 +10,7 @@
     Using the Update button, after checking one Object, loads the coordinates to an textarea so they can be changed. Afterwards they are updated in the database.</p>
     
 <h2>Getting Started</h2>
-<p> I used npm express and Mongodb for that project. Installing the server, set the main page to "mainIndex.html" and the start scripts to "node start.js"
+<p> I used npm express and Mongodb for that project. After initiating the server, set the main page to "mainIndex.html" and the start scripts to "node start.js"
     <br/><strong>Packages</strong><br/>
     npm install --express<br/>
     npm install --mongodb<br/>
