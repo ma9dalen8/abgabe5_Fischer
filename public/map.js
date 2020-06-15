@@ -171,7 +171,7 @@ function getValue(){
 }
 /**
 *@function mappingUserInput
-*@desc displaying User Input adress on the draw Map, Mapbox
+*@desc displaying chosen Objekt on the map
 */
 var inputMarker={};
 function mappingUserInput (convertedAdress){
