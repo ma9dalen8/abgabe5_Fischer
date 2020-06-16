@@ -26,7 +26,7 @@ var data = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
     tileSize: 512,
     zoomOffset: -1,
 //#######please fill in your accessToken########################################
-    accessToken: ''
+    accessToken: 'pk.eyJ1IjoibWE5ZGFsZW44IiwiYSI6ImNrYTZ4ZGdqNDBibWUyeHBuN3JmN2lrdDcifQ.SgZHAThfZLyx2Avk3th2Lg'
 }).addTo(basemap);
 
 /**
@@ -34,9 +34,48 @@ var data = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
 *@desc creating for each point in the Busstop GeoJSON a circle on the map
 *
 */
-
+var heatCoordinates=[];
 var allBusstops;
 function mappingBusstops(){
+
+
+  allBusstops=L.geoJSON(JSON.parse(x.responseText),{
+   pointToLayer: function(features, latlng){
+     heatCoordinates.push([parseFloat(latlng.lat),parseFloat( latlng.lng), 0.5]);
+     return L.circle(latlng);
+   },
+   //creating popup with the BusstopId und Busstopname
+   onEachFeature: function(feature, layer){
+     departureTimeResults=feature.properties.nr;
+     layer.bindPopup('<strong>'+feature.properties.lbez+'</strong> <br/>'+departureTimeResults );
+     //console.log(latlng)
+
+   }
+ }).addTo(basemap).on('click', onClick); // eventlistener click on Circle event
+ //var heat =L.heatLayer(allBusstops) .addTo(basemap).on('click', onClick); // eventlistener click on Circle event
+ var heat=new L.heatLayer(heatCoordinates, {radius:75});//.addTo(basemap);
+   //heatCoordinates, {radius: 35}).addTo(basemap);
+ console.log(heat);
+ var baseLayer={ basemap };
+ var overlays={ heat};
+ L.control.layers(null, overlays).addTo(basemap);
+
+}
+/* {
+  color: 'blue',
+  fillColor: '#f03',
+  fillOpacity: 0.5,
+  radius: 2
+}),{radius: 25}).addTo(basemap);*/
+/*
+allBusstops= L.heatLayer([geoJSON(JSON.parse(x.responseText),{
+  pointToLayer: function(features, latlng){
+    return L.circle(latlng,0.2);
+}})], {radius: 25}).addTo(basemap);
+
+for(var i=0; i<pointCollection.features.length; i++){
+busstopInfos.push(pointCollection.features[i].geometry.coordinates);
+L.heatLayer([busstopInfos[i][1], busstopInfos[i][0],0.2],{radius: 25}).addTo(basemap);
 
  allBusstops=L.geoJSON(JSON.parse(x.responseText),{
   pointToLayer: function(features, latlng){
@@ -50,7 +89,7 @@ function mappingBusstops(){
   }
 }).addTo(basemap).on('click', onClick); // eventlistener click on Circle event
 }
-
+*/
 /**
 *@function onClick
 *@desc waits for an click event, starts the departureTime Calculation for clicked Busstop
