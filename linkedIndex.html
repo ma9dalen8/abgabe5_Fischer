@@ -64,8 +64,12 @@
   </div>
 
         </header>
+        </header>
     </head>
     <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
     <div class="container">
 
       <label for='street'><strong>Street</strong> </label>
@@ -76,22 +80,43 @@
 
       <br/><label for='city'><strong>City</strong> </label>
       <input type='text' id='city' > <button type='button' onclick="geocoding()">Submit</button></br></br>
-    </div>
 
+      <br/><br/><div class="container" id="test">
+        <button type="button" onclick="showingDatabaseContent()">Database Content</button>
+        <br/><br/><strong> Please select objects (multiple choice for deletion possible, only single choice for update) </strong>
+        <ul id='ul'><br/></ul>
+
+
+      <div class="container">
+
+      <button type="button" onclick="deleteItem()" >Delete <br/>one or multiple </button>
+      <button type="button" onclick="updateItem()">Update one set of <br/> coordinates</button>
+      <div  class= "container" id="updateTextarea"> </div>
+      <button id='updateButton' type="button" onclick="serverCall()">Submit</button>
 
     <div class="container">
 
       <button type='button' onclick="getLocation()">Browser Location</button> </br>
     </div>
+  </div>
+    </div>
+  </div>
+  </div>
+
+    <div class="col-lg-6">
 
       <br/><br/>
       <div class= "container" id="result"> </div>
       <div class="container" id="userMap" style= 'height: 400px'></div>
+      </div>
+    </div>
+<!--
+    <div class="col-lg-4">
       <br/><br/><div class="container" id="test">
         <button type="button" onclick="showingDatabaseContent()">Database Content</button>
-         <br/><br/><strong> Please select objects (multiple choice for deletion possible, only single choice for update) </strong>
-         <ul id='ul'><br/></ul>
-      </div>
+        <br/><br/><strong> Please select objects (multiple choice for deletion possible, only single choice for update) </strong>
+        <ul id='ul'><br/></ul>
+
 
       <div class="container">
 
@@ -100,6 +125,7 @@
       <div  class= "container" id="updateTextarea"> </div>
       <button id='updateButton' type="button" onclick="serverCall()">Submit</button>
     </div>
+  </div> -->
 
       <div id= 'scripte'>
         <script src="public/GeoJSON.js"></script>
@@ -114,7 +140,7 @@
       <footer class="page-footer font-small blue pt-4">
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Copyright: Magdalena Fischer
+        <div class="footer-copyright text-center py-3">© 2020 Copyright: Magdalena Fischer, m_fisc39@wwu.de,
           <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
         </div>
         <!-- Copyright -->
