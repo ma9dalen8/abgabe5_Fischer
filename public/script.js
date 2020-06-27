@@ -61,6 +61,7 @@ function bearingCalculation (start, end){
   return roundedBrng;
 }
 
+
 /**
 *@function toRad
 *@desc helping function converts degree into radians
