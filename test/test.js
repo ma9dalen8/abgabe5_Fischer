@@ -80,37 +80,43 @@ describe('distance and bearing tester', function () {
         var point4=[7.587433, 51.948180];
         var point5=[7.647224, 51.954504];
 
-    it('bearing equals turf.js bearing', function () {
-
-      //bearing(-75.343, 39.984);
-
-      /*var point1 = turf.point([-75.343, 39.984]);
-      var point2 = turf.point([-75.534, 39.123]);*/
-
-
+        it('bearing equals turf.js bearing', function () {
       var bearing1 = bearing.default(point1, point2);
-      var bearing2 = bearing.default(point1, point3);
-      var bearing3 = bearing.default(point1, point4);
-      var bearing4 = bearing.default(point1, point5);
-
       assert.equal(bearingCalculation(point1,point2),bearing1);
+});
+
+    it('bearing equals turf.js bearing', function () {
+      var bearing2 = bearing.default(point1, point3);
       assert.equal(bearingCalculation(point1,point3),bearing2);
+});
+
+    it('bearing equals turf.js bearing', function () {
+      var bearing3 = bearing.default(point1, point4);
       assert.equal(bearingCalculation(point1,point4),bearing3);
+});
+
+    it('bearing equals turf.js bearing', function () {
+      var bearing4 = bearing.default(point1, point5);
       assert.equal(bearingCalculation(point1,point5),bearing4);
-
-
-
   });
+
   it('distance equals turf.js bearing', function (){
-
     var distance1 = distance.default(point1, point2);
-    var distance2 = distance.default(point1, point3);
-    var distance3 = distance.default(point1, point4);
-    var distance4 = distance.default(point1, point5);
-
     assert.equal(distanceCalculation(point1,point2),distance1);
+});
+
+  it('distance equals turf.js bearing', function (){
+    var distance2 = distance.default(point1, point3);
     assert.equal(distanceCalculation(point1,point3),distance2);
+});
+
+  it('distance equals turf.js bearing', function (){
+    var distance3 = distance.default(point1, point4);
     assert.equal(distanceCalculation(point1,point4),distance3);
+});
+
+  it('distance equals turf.js bearing', function (){
+    var distance4 = distance.default(point1, point5);
     assert.equal(distanceCalculation(point1,point5),distance4);
   });
 });
